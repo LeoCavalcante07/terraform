@@ -3,6 +3,10 @@ provider "google" {
   region  = "US"                      # Substitua pela região desejada
 }
 
-resource "google_project_service" "cloud_functions" {
-  service = "cloudfunctions.googleapis.com"
+resource "google_project_service" "required_apis" {
+  for_each = toset([
+    "cloudfunctions.googleapis.com",
+    "cloudbuild.googleapis.com"
+  ])
+  service = each.key
 }
