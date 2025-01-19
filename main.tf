@@ -9,7 +9,7 @@ resource "google_storage_bucket" "codes_bucket_1901" {
 resource "google_storage_bucket_object" "source_code" {
   name   = "objects"
   bucket = google_storage_bucket.codes_bucket_1901.name
-  source = "main.zip"
+  source = "function_code.zip"
 }
 
 resource "google_cloudfunctions_function" "func_1_test" {
