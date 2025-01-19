@@ -1,7 +1,7 @@
 resource "google_storage_bucket" "codes_bucket_1901" {
   project                  = "moonlit-bliss-448020-r3"
   name                     = "codes_bucket_1901"
-  location                 = "US"
+  location                 = "us-central1"
   force_destroy            = true
   public_access_prevention = "enforced"
 }
@@ -13,10 +13,10 @@ resource "google_storage_bucket_object" "source_code" {
 }
 
 resource "google_cloudfunctions_function" "func_1_test" {
-  name        = "func_1_test"
-  description = "My function TF"
-  runtime     = "python39"
-
+  name                  = "func_1_test"
+  description           = "My function TF"
+  runtime               = "python39"
+  region                = "us-central1"
   available_memory_mb   = 128
   source_archive_bucket = google_storage_bucket.codes_bucket_1901.name
   source_archive_object = google_storage_bucket_object.source_code.name
