@@ -8,7 +8,7 @@ resource "google_storage_bucket" "codes_bucket_1901" {
 
 resource "google_storage_bucket_object" "source_code" {
   name   = "index.zip"
-  bucket = google_storage_bucket.codes_bucket.name
+  bucket = google_storage_bucket.codes_bucket_1901.name
   source = "index.zip"
 }
 
