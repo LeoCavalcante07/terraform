@@ -1,6 +1,6 @@
-resource "google_storage_bucket" "codes_bucket" {
+resource "google_storage_bucket" "codes_bucket_1901" {
   project                  = "moonlit-bliss-448020-r3"
-  name                     = "codes_bucket"
+  name                     = "codes_bucket_1901"
   location                 = "US"
   force_destroy            = true
   public_access_prevention = "enforced"
@@ -18,7 +18,7 @@ resource "google_cloudfunctions_function" "func_1_test" {
   runtime     = "python39"
 
   available_memory_mb   = 128
-  source_archive_bucket = google_storage_bucket.codes_bucket.name
+  source_archive_bucket = google_storage_bucket.codes_bucket_1901.name
   source_archive_object = google_storage_bucket_object.source_code.name
   trigger_http          = true
   entry_point           = "hello_http"
