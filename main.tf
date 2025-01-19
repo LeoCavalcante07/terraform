@@ -1,3 +1,8 @@
+provider "google" {
+  project = "moonlit-bliss-448020-r3" # Substitua pelo ID do seu projeto
+  region  = "US"                      # Substitua pela região desejada
+}
+
 terraform {
   backend "gcs" {
     bucket = "terraform-config-1801"     # Nome do bucket GCS
