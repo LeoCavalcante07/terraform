@@ -2,7 +2,6 @@ terraform {
   backend "gcs" {
     bucket = "terraform-config-1801"     # Nome do bucket GCS
     prefix = "state/terraform.tfstate"  # Caminho dentro do bucket (por exemplo, "terraform/state.tfstate")
-    project = "moonlit-bliss-448020-r3"     # ID do seu projeto GCP
   }
 }
 
