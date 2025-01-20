@@ -23,7 +23,7 @@ resource "google_storage_bucket" "codes_bucket_1901" {
   project                  = "moonlit-bliss-448020-r3"
   name                     = "codes_bucket_1901"
   location                 = "us-central1"
-  force_destroy           = true
+  force_destroy            = true
   public_access_prevention = "enforced"
 }
 
