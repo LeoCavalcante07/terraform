@@ -14,7 +14,7 @@ resource "google_project_service" "required_apis" {
 terraform {
   backend "gcs" {
     bucket = "terraform-config-1801"     # Nome do bucket GCS
-    prefix = "state/terraform.tfstate"  # Caminho dentro do bucket (por exemplo, "terraform/state.tfstate")
+    prefix = "state/terraform"  # Caminho dentro do bucket (por exemplo, "terraform/state.tfstate")
   }
 }
 
