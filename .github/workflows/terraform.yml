@@ -32,11 +32,11 @@ jobs:
 
     #===============================inicio teste===============================
       # Configurar variáveis de ambiente para credenciais
-    - name: Set up Google Cloud credentials
-      env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
-      run: |
-        echo "Configuração de credenciais concluída."
+    # - name: Set up Google Cloud credentials
+    #   env:
+    #     GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+    #   run: |
+    #     echo "Configuração de credenciais concluída."
 
     # Verificar acesso ao bucket GCS
     # - name: Verify GCS Access
