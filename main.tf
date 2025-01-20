@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "terraform-config-1801"     # Nome do bucket GCS
+    bucket = "terraform-config-1801test"     # Nome do bucket GCS
     prefix = "state"  # Caminho dentro do bucket (por exemplo, "terraform/state.tfstate")
   }
 }
