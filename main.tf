@@ -19,17 +19,17 @@ terraform {
 }
 
 
-resource "google_storage_bucket" "codes_bucket_1901" {
+resource "google_storage_bucket" "codes_bucket_1901_v2" {
   project                  = "moonlit-bliss-448020-r3"
-  name                     = "codes_bucket_1901"
+  name                     = "codes_bucket_1901_v2"
   location                 = "us-central1"
   force_destroy            = true
   public_access_prevention = "enforced"
 }
 
-resource "google_storage_bucket_object" "source_code" {
+resource "google_storage_bucket_object" "source_code_v2" {
   name   = "objects"
-  bucket = google_storage_bucket.codes_bucket_1901.name
+  bucket = google_storage_bucket.codes_bucket_1901_v2.name
   source = "function_code.zip"
 }
 
@@ -41,8 +41,8 @@ resource "google_cloudfunctions_function" "func_2_test" {
   runtime               = "python39"
   region                = "us-central1"
   available_memory_mb   = 128
-  source_archive_bucket = google_storage_bucket.codes_bucket_1901.name
-  source_archive_object = google_storage_bucket_object.source_code.name
+  source_archive_bucket = google_storage_bucket.codes_bucket_1901_v2.name
+  source_archive_object = google_storage_bucket_object.source_code_v2.name
   trigger_http          = true
   entry_point           = "hello_http"
 }
