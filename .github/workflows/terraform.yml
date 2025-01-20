@@ -50,8 +50,7 @@ jobs:
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
         TF_LOG: DEBUG
-      run: terraform init
-          
+      run: terraform init          
      
     #===============================fim teste===============================
 
