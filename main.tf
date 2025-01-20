@@ -35,7 +35,7 @@ resource "google_storage_bucket_object" "source_code" {
 
 #==================================CLOUD FUNCTIONS==================================
 
-resource "google_cloudfunctions_function" "func_1_test" {
+resource "google_cloudfunctions_function" "func_2_test" {
   name                  = "func_2_test"
   description           = "My function TF"
   runtime               = "python39"
