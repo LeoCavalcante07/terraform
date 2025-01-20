@@ -30,12 +30,23 @@ jobs:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
 
-    #teste
-    - name: Verify GCS Bucket Access      
-      run: gsutil ls -b gs://terraform-config-1801
+    #inicio teste
+      # Configurar variáveis de ambiente para credenciais
+    - name: Set up Google Cloud credentials
       env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+      run: |
+        echo "Configuração de credenciais concluída."
+
+    # Verificar acesso ao bucket GCS
+    - name: Verify GCS Access
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+      run: |
+        gcloud auth activate-service-account --key-file=<(echo "$GOOGLE_CREDENTIALS")
+        gsutil ls -b gs://terraform-config-1801
      
+    #fim teste
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
