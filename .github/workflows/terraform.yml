@@ -34,7 +34,7 @@ jobs:
     - name: Verify GCS Bucket Access      
       run: gsutil ls -b gs://terraform-config-1801
       env:
-        GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
      
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
