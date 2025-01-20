@@ -59,7 +59,7 @@ resource "google_cloudfunctions_function_iam_member" "invoker_v2" {
 
 #==================================COMPUTE ENGINE==================================
 resource "google_compute_instance" "default" {
-  name         = "my-instance_using_tf"
+  name         = "my-instance-sing-tf"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
 
