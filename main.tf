@@ -11,12 +11,12 @@ resource "google_project_service" "required_apis" {
   service = each.key
 }
 
-/*terraform {
+terraform {
   backend "gcs" {
     bucket = "terraform-config-1801"     # Nome do bucket GCS
-    prefix = "state/terraform.tfstate"  # Caminho dentro do bucket (por exemplo, "terraform/state.tfstate")
+    prefix = "state"  # Caminho dentro do bucket (por exemplo, "terraform/state.tfstate")
   }
-}*/
+}
 
 
 resource "google_storage_bucket" "codes_bucket_1901" {
