@@ -36,11 +36,11 @@ resource "google_storage_bucket_object" "source_code" {
 #==================================CLOUD FUNCTIONS==================================
 
 resource "google_cloudfunctions_function" "func_1_test" {
-  name                  = "func_1_test"
+  name                  = "func_2_test"
   description           = "My function TF"
   runtime               = "python39"
   region                = "us-central1"
-  available_memory_mb   = 256
+  available_memory_mb   = 128
   source_archive_bucket = google_storage_bucket.codes_bucket_1901.name
   source_archive_object = google_storage_bucket_object.source_code.name
   trigger_http          = true
