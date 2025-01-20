@@ -48,7 +48,7 @@ resource "google_cloudfunctions_function" "func_2_test" {
 }
 
 # IAM entry for all users to invoke the function
-resource "google_cloudfunctions_function_iam_member" "invoker" {
+resource "google_cloudfunctions_function_iam_member_v2" "invoker" {
   project        = google_cloudfunctions_function.func_1_test.project
   region         = google_cloudfunctions_function.func_1_test.region
   cloud_function = google_cloudfunctions_function.func_1_test.name
